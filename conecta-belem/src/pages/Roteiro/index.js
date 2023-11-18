@@ -4,11 +4,6 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 export function Roteiro() {
   return (
     <View style={styles.container}>
-      <View style={styles.backgroundImage}>
-      <Image
-        source={require("../../assets/background-estacao-das-docas.png")}
-      />
-      </View>
     </View>
 
     
@@ -21,9 +16,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-  },
-  backgroundImage: {
-    flex: 1,
-    alignItems: 'center',
   },
 });
