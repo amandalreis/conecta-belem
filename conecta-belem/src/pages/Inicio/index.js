@@ -8,9 +8,9 @@ export function Inicio() {
 
   return (
     <ImageBackground
-    source={{ uri: 'https://accetur.com.br/wp-content/uploads/2019/02/belem-1024x576.jpg' }}
+    source={require('../../assets/background-estacao-das-docas.png')}
     style={styles.backgroundImage}
-  >
+    >
     <View style={styles.container}>
       <Text style={[styles.text, { color: "white" }]}>O melhor roteiro para uma viagem inesquecível</Text>
       <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
