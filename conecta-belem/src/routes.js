@@ -1,9 +1,25 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
+import { createStackNavigator } from '@react-navigation/stack';
+import { Inicio } from './pages/Inicio'
 import { Home } from './pages/Home'
 import { Roteiro } from './pages/Roteiro'
 import { Ionicons } from '@expo/vector-icons'
 
 const Tab = createBottomTabNavigator();
+const Stack = createStackNavigator();
+
+export function MainStack() {
+    return (
+    <Stack.Navigator initialRouteName="Inicio">
+      <Stack.Screen
+        name="Inicio"
+        component={Inicio}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="Home" component={Routes} />
+    </Stack.Navigator>
+    )
+  }
 
 export function Routes() {
     return(
