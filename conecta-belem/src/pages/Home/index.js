@@ -13,16 +13,19 @@ export function Home() {
       id: '1',
       image: require('../../assets/logo-point-do-açai.png'), 
       title: 'Point do Açaí',
+      status: 'Aberto até às 22:00'
     },
     {
       id: '2',
       image: require('../../assets/logo-casa-saulo.jpg'), 
       title: 'Casa do Saulo Onze Janelas',
+      status: 'Fechado'
     },
     {
       id: '3',
       image: require('../../assets/roxy-bar.png'), 
       title: 'Roxy Bar',
+      status: 'Aberto até 00:00'
     }
     
     // Adicione mais itens conforme necessário
@@ -42,7 +45,10 @@ export function Home() {
           renderItem={({ item }) => (
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
+              <View>
               <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.status}>{item.status}</Text>
+              </View>
             </View>
           )}
           keyExtractor={(item) => item.id}
@@ -96,4 +102,8 @@ const styles = StyleSheet.create({
   list: {
     marginHorizontal: 30,
   },
+  status: {
+    fontSize: 14,
+    fontWeight: 'regular',
+  }
 });

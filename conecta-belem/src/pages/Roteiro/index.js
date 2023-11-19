@@ -11,13 +11,19 @@ export function Roteiro() {
   const dataList = [
     {
       id: '1',
-      image: require('../../assets/background-acai.png'), 
-      title: '08:00',
+      image: require('../../assets/basilica.jpeg'), 
+      title: '08:00 - Basílica Nossa Senhora de Nazaré',
     },
     {
       id: '2',
-      image: require('../../assets/background-estacao-das-docas.png'), 
-      title: '10:00',
+      image: require('../../assets/uber.png'), 
+      title: '09:00 - Uber Agendado',
+      description: 'Motorista: Wesley Souza'
+    },
+    {
+      id: '3',
+      image: require('../../assets/ver-o-peso.jpg'), 
+      title: '09:30 - Ver-o-Peso',
     },
     // Adicione mais itens conforme necessário
   ];
@@ -51,7 +57,11 @@ export function Roteiro() {
           renderItem={({ item }) => (
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
+              <View>
               <Text style={styles.title}>{item.title}</Text>
+              <Text style={styles.description}>{item.description}</Text>
+              </View>
+              
             </View>
           )}
           keyExtractor={(item) => item.id}
@@ -103,4 +113,8 @@ const styles = StyleSheet.create({
   list: {
     marginHorizontal: 30,
   },
+  description: {
+    fontSize: 14,
+    fontWeight: 'regular',
+  }
 });
