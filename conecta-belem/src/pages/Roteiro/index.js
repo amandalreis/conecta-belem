@@ -12,28 +12,33 @@ export function Roteiro() {
       id: '1',
       image: require('../../assets/basilica.jpeg'), 
       title: '08:00 - Basílica Nossa Senhora de Nazaré',
+      descricao_atividade: 'Lorem Ipsum',
     },
     {
       id: '2',
       image: require('../../assets/uber.png'), 
       title: '09:00 - Uber Agendado',
-      description: 'Motorista: Wesley Souza'
+      uber: 'Motorista: Wesley Souza',
+      descricao_atividade: 'Lorem Ipsum',
     },
     {
       id: '3',
       image: require('../../assets/ver-o-peso.jpg'), 
       title: '09:30 - Ver-o-Peso',
+      descricao_atividade: 'Lorem Ipsum',
     },
     {
       id: '4',
       image: require('../../assets/uber.png'), 
       title: '11:30 - Uber Agendado',
-      description: 'Motorista: Samuel Novaes'
+      uber: 'Motorista: Samuel Novaes',
+      descricao_atividade: 'Lorem Ipsum',
     },
     {
       id: '5',
       image: require('../../assets/logo-casa-saulo.jpg'), 
       title: '12:00 - Casa do Saulo Onze Janelas',
+      descricao_atividade: 'Lorem Ipsum',
     },
     // Adicione mais itens conforme necessário
   ];
@@ -66,12 +71,12 @@ export function Roteiro() {
           ListHeaderComponent={headerRoteiro}
           data={dataList}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Nome: item.title, Foto: item.image })}>
+            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Nome: item.title, Foto: item.image, Descricao: item.descricao_atividade })}>
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
               <View>
               <Text style={styles.title}>{item.title}</Text>
-              <Text style={styles.description}>{item.description}</Text>
+              <Text style={styles.description}>{item.uber}</Text>
               </View>
             </View>
             </TouchableOpacity>

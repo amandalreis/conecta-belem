@@ -5,13 +5,13 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 export function DetalhesAtividade ({ route }) {
   const { Nome } = route.params;
   const { Foto } = route.params;
-
-  // Lógica para buscar detalhes do item com base no itemId
+  const { Descricao } = route.params;
 
   return (
     <View style={styles.container}>
       <Image source={Foto} style={styles.image} />
       <Text style={styles.title}>{Nome}</Text>
+      <Text style={styles.description}>{Descricao}</Text>
     </View>
   );
 };

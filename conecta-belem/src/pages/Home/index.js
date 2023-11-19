@@ -13,25 +13,29 @@ export function Home() {
       id: '1',
       image: require('../../assets/logo-point-do-açai.png'), 
       title: 'Point do Açaí',
-      status: 'Aberto até às 22:00'
+      status: 'Aberto até às 22:00',
+      descricao_atividade: 'Lorem Ipsum'
     },
     {
       id: '2',
       image: require('../../assets/logo-casa-saulo.jpg'), 
       title: 'Casa do Saulo Onze Janelas',
-      status: 'Fechado'
+      status: 'Fechado',
+      descricao_atividade: 'Lorem Ipsum'
     },
     {
       id: '3',
       image: require('../../assets/roxy-bar.png'), 
       title: 'Roxy Bar',
-      status: 'Aberto até 00:00'
+      status: 'Aberto até 00:00',
+      descricao_atividade: 'Lorem Ipsum'
     },
     {
       id: '4',
       image: require('../../assets/remanso-do-peixe.jpg'), 
       title: 'Remanso do Peixe',
-      status: 'Aberto até 23:00'
+      status: 'Aberto até 23:00',
+      descricao_atividade: 'Lorem Ipsum'
     },
     
     // Adicione mais itens conforme necessário
@@ -49,7 +53,7 @@ export function Home() {
           ListHeaderComponent={headerHome}
           data={dataList}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Nome: item.title, Foto: item.image })}>
+            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Nome: item.title, Foto: item.image, Descricao: item.descricao_atividade })}>
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
               <View>
