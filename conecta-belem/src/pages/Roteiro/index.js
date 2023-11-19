@@ -25,8 +25,20 @@ export function Roteiro() {
       image: require('../../assets/ver-o-peso.jpg'), 
       title: '09:30 - Ver-o-Peso',
     },
+    {
+      id: '4',
+      image: require('../../assets/uber.png'), 
+      title: '11:30 - Uber Agendado',
+      description: 'Motorista: Samuel Novaes'
+    },
+    {
+      id: '5',
+      image: require('../../assets/logo-casa-saulo.jpg'), 
+      title: '09:30 - Casa do Saulo Onze Janelas',
+    },
     // Adicione mais itens conforme necessário
   ];
+  
 
   const headerRoteiro = <View style={styles.top}>
   <Text style={styles.text}>Planejamento</Text>

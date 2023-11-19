@@ -26,7 +26,13 @@ export function Home() {
       image: require('../../assets/roxy-bar.png'), 
       title: 'Roxy Bar',
       status: 'Aberto até 00:00'
-    }
+    },
+    {
+      id: '4',
+      image: require('../../assets/remanso-do-peixe.jpg'), 
+      title: 'Remanso do Peixe',
+      status: 'Aberto até 23:00'
+    },
     
     // Adicione mais itens conforme necessário
   ];
