@@ -16,9 +16,15 @@ export function Home() {
     },
     {
       id: '2',
-      image: require('../../assets/background-estacao-das-docas.png'), 
-      title: '10:00',
+      image: require('../../assets/logo-casa-saulo.jpg'), 
+      title: 'Casa do Saulo Onze Janelas',
     },
+    {
+      id: '3',
+      image: require('../../assets/roxy-bar.png'), 
+      title: 'Roxy Bar',
+    }
+    
     // Adicione mais itens conforme necessário
   ];
 
