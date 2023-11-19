@@ -26,6 +26,7 @@ export function Roteiro() {
     <View style={styles.container}>
       <View style={styles.top}>
         <Text style={styles.text}>Planejamento</Text>
+        
         <SelectDropdown
           style={styles.menu}
           data={countries}
@@ -40,6 +41,7 @@ export function Roteiro() {
           }}
           defaultButtonText={selectedItem} // Define o texto do botão com o item selecionado
         />
+        </View>
         <FlatList
           data={dataList}
           renderItem={({ item }) => (
@@ -51,7 +53,6 @@ export function Roteiro() {
           keyExtractor={(item) => item.id}
         />
       </View>
-    </View>
   );
 }
 
@@ -70,7 +71,8 @@ const styles = StyleSheet.create({
   top: {
     alignItems: 'flex-start',
     paddingBottom: 20,
-    marginTop: 50, 
+    marginTop: 110,
+    marginRight: 80,
   },
   item: {
     flexDirection: 'row',
