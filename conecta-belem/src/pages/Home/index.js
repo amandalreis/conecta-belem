@@ -6,12 +6,41 @@ import BackgroundAcai from '../../assets/background-acai.png';
 import BackgroundEstacaoDasDocas from '../../assets/background-estacao-das-docas.png';
 
 export function Home() {
+  const countries = ["21 de Dezembro", "22 de Dezembro", "23 de Dezembro", "24 de Dezembro"]
+  const [selectedItem, setSelectedItem] = useState(countries[0]); // Define o primeiro item como selecionado inicialmente
+  const dataList = [
+    {
+      id: '1',
+      image: require('../../assets/background-acai.png'), 
+      description: '08:00',
+    },
+    {
+      id: '2',
+      image: require('../../assets/background-estacao-das-docas.png'), 
+      description: '10:00',
+    },
+    // Adicione mais itens conforme necessário
+  ];
+
+  const headerHome = <View style={styles.top}>
+  <Text style={styles.text}>Olá, Gabriel!</Text>
+  </View>
+  
+
   return (
     <View style={styles.container}>
-      <View style={styles.top}>
-        <Text style={styles.text}>Olá, Gabriel!</Text>
+        <FlatList
+          ListHeaderComponent={headerHome}
+          data={dataList}
+          renderItem={({ item }) => (
+            <View style={styles.item}>
+              <Image source={item.image} style={styles.image} />
+              <Text style={styles.description}>{item.description}</Text>
+            </View>
+          )}
+          keyExtractor={(item) => item.id}
+        />
       </View>
-    </View>
   );
 }
 
@@ -19,7 +48,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#F1F1F1',
-    alignItems: 'left',
+    alignItems: 'center',
     justifyContent: 'center',
   },
   text: {
@@ -29,9 +58,9 @@ const styles = StyleSheet.create({
   },
   top: {
     alignItems: 'flex-start',
-    paddingBottom: 500,
-    marginTop: 0, 
-    marginLeft: 40,
+    paddingBottom: 20,
+    marginTop: 110,
+    marginRight: 80,
   },
   item: {
     flexDirection: 'row',

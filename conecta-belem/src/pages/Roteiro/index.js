@@ -6,6 +6,8 @@ import BackgroundAcai from '../../assets/background-acai.png';
 import BackgroundEstacaoDasDocas from '../../assets/background-estacao-das-docas.png';
 
 export function Roteiro() {
+  const countries = ["21 de Dezembro", "22 de Dezembro", "23 de Dezembro", "24 de Dezembro"]
+  const [selectedItem, setSelectedItem] = useState(countries[0]); // Define o primeiro item como selecionado inicialmente
   const dataList = [
     {
       id: '1',
@@ -19,30 +21,31 @@ export function Roteiro() {
     },
     // Adicione mais itens conforme necessário
   ];
-  const countries = ["21 de Dezembro", "22 de Dezembro", "23 de Dezembro", "24 de Dezembro"]
-  const [selectedItem, setSelectedItem] = useState(countries[0]); // Define o primeiro item como selecionado inicialmente
+
+  const headerRoteiro = <View style={styles.top}>
+  <Text style={styles.text}>Planejamento</Text>
+  
+  <SelectDropdown
+    style={styles.menu}
+    data={countries}
+    onSelect={(selectedItem, index) => {
+      setSelectedItem(selectedItem); // Atualiza o estado com o item selecionado
+    }}
+    buttonTextAfterSelection={(selectedItem, index) => {
+      return selectedItem; // Retorna o texto do item selecionado no botão
+    }}
+    rowTextForSelection={(item, index) => {
+      return item; // Define o texto exibido para cada item na lista suspensa
+    }}
+    defaultButtonText={selectedItem} // Define o texto do botão com o item selecionado
+  />
+  </View>
+  
 
   return (
     <View style={styles.container}>
-      <View style={styles.top}>
-        <Text style={styles.text}>Planejamento</Text>
-        
-        <SelectDropdown
-          style={styles.menu}
-          data={countries}
-          onSelect={(selectedItem, index) => {
-            setSelectedItem(selectedItem); // Atualiza o estado com o item selecionado
-          }}
-          buttonTextAfterSelection={(selectedItem, index) => {
-            return selectedItem; // Retorna o texto do item selecionado no botão
-          }}
-          rowTextForSelection={(item, index) => {
-            return item; // Define o texto exibido para cada item na lista suspensa
-          }}
-          defaultButtonText={selectedItem} // Define o texto do botão com o item selecionado
-        />
-        </View>
         <FlatList
+          ListHeaderComponent={headerRoteiro}
           data={dataList}
           renderItem={({ item }) => (
             <View style={styles.item}>
