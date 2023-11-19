@@ -49,7 +49,7 @@ export function Home() {
           ListHeaderComponent={headerHome}
           data={dataList}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { itemId: item.id })}>
+            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Nome: item.title, Foto: item.image })}>
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
               <View>
