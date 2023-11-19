@@ -12,12 +12,12 @@ export function Roteiro() {
     {
       id: '1',
       image: require('../../assets/background-acai.png'), 
-      description: '08:00',
+      title: '08:00',
     },
     {
       id: '2',
       image: require('../../assets/background-estacao-das-docas.png'), 
-      description: '10:00',
+      title: '10:00',
     },
     // Adicione mais itens conforme necessário
   ];
@@ -44,17 +44,19 @@ export function Roteiro() {
 
   return (
     <View style={styles.container}>
-        <FlatList
+      <View style={styles.list}>
+      <FlatList
           ListHeaderComponent={headerRoteiro}
           data={dataList}
           renderItem={({ item }) => (
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
-              <Text style={styles.description}>{item.description}</Text>
+              <Text style={styles.title}>{item.title}</Text>
             </View>
           )}
           keyExtractor={(item) => item.id}
         />
+      </View>
       </View>
   );
 }
@@ -91,11 +93,14 @@ const styles = StyleSheet.create({
     marginRight: 16,
     borderRadius: 10,
   },
-  description: {
+  title: {
     fontSize: 16,
     fontWeight: 'bold',
   },
   menu: {
     borderRadius: 15,
-  }
+  },
+  list: {
+    marginHorizontal: 30,
+  },
 });
