@@ -1,22 +1,24 @@
 // Detalhes.js
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, ImageBackground } from 'react-native';
 
 export function DetalhesAtividade ({ route }) {
-  const { Nome } = route.params;
-  const { Foto } = route.params;
-  const { Descricao } = route.params;
+  const { Screen } = route.params;
 
   return (
-    <View style={styles.container}>
-      <Image source={Foto} style={styles.image} />
-      <Text style={styles.title}>{Nome}</Text>
-      <Text style={styles.description}>{Descricao}</Text>
-    </View>
+    <ImageBackground
+    source={(Screen)}
+    style={styles.backgroundImage}
+    />
   );
 };
 
 const styles = StyleSheet.create({
+  backgroundImage: {
+    flex: 1,
+    resizeMode: 'contain',
+    // outras estilizações conforme necessário
+  },
   container: {
     flex: 1,
     justifyContent: 'center',
@@ -31,6 +33,14 @@ const styles = StyleSheet.create({
     width: 100, // Ajuste a largura conforme necessário
     height: 100, // Ajuste a altura conforme necessário
     borderRadius: 50,
+  },
+  description: {
+    fontSize: 17,
+    fontWeight: 'regular',
+    marginHorizontal: 50,
+    justifyContent: 'center',
+    alignContent: 'center',
+    alignItems: 'center',
   }
   // Adicione estilos adicionais conforme necessário
 });

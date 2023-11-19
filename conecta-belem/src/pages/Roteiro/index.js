@@ -71,7 +71,7 @@ export function Roteiro() {
           ListHeaderComponent={headerRoteiro}
           data={dataList}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Nome: item.title, Foto: item.image, Descricao: item.descricao_atividade })}>
+            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { ItemId: item.id, Nome: item.title, Foto: item.image, Descricao: item.descricao_atividade })}>
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
               <View>

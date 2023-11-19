@@ -14,28 +14,32 @@ export function Home() {
       image: require('../../assets/logo-point-do-açai.png'), 
       title: 'Point do Açaí',
       status: 'Aberto até às 22:00',
-      descricao_atividade: 'Lorem Ipsum'
+      descricao_atividade: 'No Restaurante Point do Açaí, você encontra pratos típicos da região amazônica, como gó, pratiqueira, charque e camarão, acompanhados de açaí preto, branco ou bacaba. A cozinha segue altos padrões de higiene e qualidade, representando fielmente a culinária paraense.',
+      screen: require('../../assets/atv-point-do-acai.png'),
     },
     {
       id: '2',
       image: require('../../assets/logo-casa-saulo.jpg'), 
       title: 'Casa do Saulo Onze Janelas',
       status: 'Fechado',
-      descricao_atividade: 'Lorem Ipsum'
+      descricao_atividade: 'Uma experiência amazônica no Guajará.',
+      screen: require('../../assets/atv-casa-do-saulo.png'),
     },
     {
       id: '3',
       image: require('../../assets/roxy-bar.png'), 
       title: 'Roxy Bar',
       status: 'Aberto até 00:00',
-      descricao_atividade: 'Lorem Ipsum'
+      descricao_atividade: 'O prazer de estar lá.',
+      screen: require('../../assets/atv-roxy-bar.png'),
     },
     {
       id: '4',
       image: require('../../assets/remanso-do-peixe.jpg'), 
       title: 'Remanso do Peixe',
       status: 'Aberto até 23:00',
-      descricao_atividade: 'Lorem Ipsum'
+      descricao_atividade: 'Ensopados de peixe generosos, pratos com arroz e peixes fritos em um espaço simples com mobília colorida.',
+      screen: require('../../assets/atv-remanso-do-peixe.png'),
     },
     
     // Adicione mais itens conforme necessário
@@ -53,7 +57,7 @@ export function Home() {
           ListHeaderComponent={headerHome}
           data={dataList}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Nome: item.title, Foto: item.image, Descricao: item.descricao_atividade })}>
+            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { Screen: item.screen })}>
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
               <View>
