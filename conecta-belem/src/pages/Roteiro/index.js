@@ -58,7 +58,7 @@ export function Roteiro() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#DEE6CD',
+    backgroundColor: '#F1F1F1',
     alignItems: 'center',
     justifyContent: 'center',
   },

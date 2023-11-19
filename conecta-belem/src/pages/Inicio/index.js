@@ -12,7 +12,7 @@ export function Inicio() {
     >
 
     <View style={styles.container}>
-      <TouchableOpacity onPress={() => navigation.navigate('Home')} style={styles.button}>
+      <TouchableOpacity onPress={() => navigation.replace('Home')} style={styles.button}>
         <Text style={styles.buttonText}>Avançar</Text>
       </TouchableOpacity>
     </View>

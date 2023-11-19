@@ -16,14 +16,14 @@ export function MainStack() {
         component={Inicio}
         options={{ headerShown: false }}
       />
-      <Stack.Screen name="Home" component={Routes} />
+      <Stack.Screen name="Home" component={Routes} options={{ headerShown: false }}/>
     </Stack.Navigator>
     )
   }
 
 export function Routes() {
     return(
-        <Tab.Navigator>
+        <Tab.Navigator initialRouteName="home">
             <Tab.Screen
                 name="home"
                 component={Home}
