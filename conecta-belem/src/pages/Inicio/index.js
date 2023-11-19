@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
 import { ImageBackground, TouchableOpacity  } from 'react-native';
-import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 
 export function Inicio() {
