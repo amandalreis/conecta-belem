@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, FlatList, Image } from 'react-native';
 import SelectDropdown from 'react-native-select-dropdown'
 import React, { useState } from 'react';
-
-import BackgroundAcai from '../../assets/background-acai.png';
-import BackgroundEstacaoDasDocas from '../../assets/background-estacao-das-docas.png';
+import { useNavigation } from '@react-navigation/native';
+import { TouchableOpacity } from 'react-native';
 
 export function Home() {
+  const navigation = useNavigation();
   const countries = ["21 de Dezembro", "22 de Dezembro", "23 de Dezembro", "24 de Dezembro"]
   const [selectedItem, setSelectedItem] = useState(countries[0]); // Define o primeiro item como selecionado inicialmente
   const dataList = [
@@ -49,6 +49,7 @@ export function Home() {
           ListHeaderComponent={headerHome}
           data={dataList}
           renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => navigation.navigate("DetalhesAtividade", { itemId: item.id })}>
             <View style={styles.item}>
               <Image source={item.image} style={styles.image} />
               <View>
@@ -56,6 +57,7 @@ export function Home() {
               <Text style={styles.status}>{item.status}</Text>
               </View>
             </View>
+            </TouchableOpacity>
           )}
           keyExtractor={(item) => item.id}
         />

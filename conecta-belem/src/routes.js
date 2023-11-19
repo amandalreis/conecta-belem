@@ -3,6 +3,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { Inicio } from './pages/Inicio'
 import { Home } from './pages/Home'
 import { Roteiro } from './pages/Roteiro'
+import { DetalhesAtividade } from './pages/DetalhesAtividade'
 import { Ionicons } from '@expo/vector-icons'
 
 const Tab = createBottomTabNavigator();
@@ -21,12 +22,38 @@ export function MainStack() {
     )
   }
 
+  export function HomeStack() {
+    return (
+        <Stack.Navigator initialRouteName="Home">
+      <Stack.Screen
+        name="Home"
+        component={Home}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="DetalhesAtividade" component={DetalhesAtividade} options={{ headerShown: false }}/>
+    </Stack.Navigator>
+    )
+  }
+
+  export function RoteiroStack() {
+    return (
+        <Stack.Navigator initialRouteName="Roteiro">
+      <Stack.Screen
+        name="Roteiro"
+        component={Roteiro}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen name="DetalhesAtividade" component={DetalhesAtividade} options={{ headerShown: false }}/>
+    </Stack.Navigator>
+    )
+  }
+
 export function Routes() {
     return(
         <Tab.Navigator initialRouteName="home">
             <Tab.Screen
                 name="home"
-                component={Home}
+                component={HomeStack}
                 options={{
                     headerShown: false,
                     tabBarLabel: "",
@@ -41,7 +68,7 @@ export function Routes() {
             />
             <Tab.Screen
                 name="roteiro"
-                component={Roteiro}
+                component={RoteiroStack}
                 options={{
                     headerShown: false,
                     tabBarLabel: "",
