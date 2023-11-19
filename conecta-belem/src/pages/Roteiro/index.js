@@ -34,7 +34,7 @@ export function Roteiro() {
     {
       id: '5',
       image: require('../../assets/logo-casa-saulo.jpg'), 
-      title: '09:30 - Casa do Saulo Onze Janelas',
+      title: '12:00 - Casa do Saulo Onze Janelas',
     },
     // Adicione mais itens conforme necessário
   ];
