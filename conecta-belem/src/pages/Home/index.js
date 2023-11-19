@@ -3,6 +3,7 @@ import SelectDropdown from 'react-native-select-dropdown'
 import React, { useState } from 'react';
 import { useNavigation } from '@react-navigation/native';
 import { TouchableOpacity } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 
 export function Home() {
   const navigation = useNavigation();
@@ -47,6 +48,15 @@ export function Home() {
 
   const headerHome = <View style={styles.top}>
   <Text style={styles.text}>Olá, Gabriel!</Text>
+  <ScrollView horizontal showsHorizontalScrollIndicator={false} style={styles.scroll_view}>
+  <View style={styles.row}>
+  <Text style={styles.description_underline}>Restaurantes</Text>
+  <Text style={styles.description}>Lojas</Text>
+  <Text style={styles.description}>Excursões</Text>
+  <Text style={styles.description}>Hotéis</Text>
+  <Text style={styles.description}>Pontos Turísticos</Text>
+  </View>
+  </ScrollView>
   </View>
   
 
@@ -121,5 +131,25 @@ const styles = StyleSheet.create({
   status: {
     fontSize: 14,
     fontWeight: 'regular',
+  },
+  description_underline: {
+    fontSize: 17,
+    fontWeight: 'regular',
+    marginTop: 10,
+    textDecorationLine: 'underline', // Adiciona sublinhado
+    color: 'green',
+    marginHorizontal: 5,
+  },
+  description: {
+    fontSize: 17,
+    fontWeight: 'regular',
+    marginTop: 10,
+    marginHorizontal: 5,
+  },
+  row: {
+    flexDirection: 'row',
+  },
+  scroll_view: {
+    marginRight: -40,
   }
 });

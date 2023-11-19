@@ -1,6 +1,7 @@
 // Detalhes.js
 import React from 'react';
 import { View, Text, Image, StyleSheet, ImageBackground } from 'react-native';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 
 export function DetalhesAtividade ({ route }) {
   const { Screen } = route.params;
@@ -8,8 +9,8 @@ export function DetalhesAtividade ({ route }) {
   return (
     <ImageBackground
     source={(Screen)}
-    style={styles.backgroundImage}
-    />
+    style={styles.backgroundImage}>
+    </ImageBackground>
   );
 };
 

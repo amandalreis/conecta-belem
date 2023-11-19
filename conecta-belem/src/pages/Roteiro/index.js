@@ -65,6 +65,7 @@ export function Roteiro() {
       return item; // Define o texto exibido para cada item na lista suspensa
     }}
     defaultButtonText={selectedItem} // Define o texto do botão com o item selecionado
+    dropdownTextStyle={{ color: 'white' }}
   />
   </View>
   
@@ -131,6 +132,7 @@ const styles = StyleSheet.create({
   },
   menu: {
     borderRadius: 15,
+    color: 'f0f',
   },
   list: {
     marginHorizontal: 30,
